@@ -179,7 +179,7 @@ ul { list-style: none; }
   overflow: hidden;
 }
 .nav-logo .logo-mark::after {
-  content: 'Ψ';
+  content: 'A';
   color: #fff;
   font-family: var(--font-display);
   font-size: 18px;
