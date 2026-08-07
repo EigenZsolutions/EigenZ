@@ -152,7 +152,7 @@ ul { list-style: none; }
   background: rgba(245,244,240,0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-blue);
   z-index: 1000;
   transition: box-shadow var(--transition);
 }
