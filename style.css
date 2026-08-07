@@ -182,7 +182,7 @@ ul { list-style: none; }
 .nav-logo .logo-mark {
   width: 36px; 
   height: 36px;
-  background-color: var(--clr-light);
+  background-color: var(--clr-dark);
   background-image: url('logo.png'); /* Ensure your logo file is saved as 'logo.png' in the root folder */
   background-size: 75% 75%; /* Perfectly bounds the geometric graphic inside the dark pill container */
   background-position: center;
