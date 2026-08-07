@@ -178,12 +178,26 @@ ul { list-style: none; }
   position: relative;
   overflow: hidden;
 }
+/* ===================== NAVBAR LOGO FIX ===================== */
+.nav-logo .logo-mark {
+  width: 36px; 
+  height: 36px;
+  background-color: var(--clr-dark);
+  background-image: url('logo.png'); /* Ensure your logo file is saved as 'logo.png' in the root folder */
+  background-size: 75% 75%; /* Perfectly bounds the geometric graphic inside the dark pill container */
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Remove the old text placeholder entirely */
 .nav-logo .logo-mark::after {
-  content: 'A';
-  color: #fff;
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 800;
+  display: none !important;
 }
 .nav-logo .logo-text {
   font-family: var(--font-display);
