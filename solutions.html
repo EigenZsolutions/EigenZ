@@ -67,12 +67,11 @@
       flex-shrink: 0;
     }
     
-    /* ===== VIDEO CONTAINER (PERFECT CROP SETUP) ===== */
+    /* ===== VIDEO CONTAINER (NATURAL SCALING, NO CROPPING) ===== */
     .video-container {
       position: relative;
       z-index: 1;
       width: 100%;
-      aspect-ratio: 16/9;
       background: #000;
       border-radius: var(--radius-lg);
       border: 1px solid rgba(255,255,255,0.1);
@@ -81,8 +80,8 @@
     }
     .video-container video {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto; /* Lets the video dictate its own natural height */
+      display: block; /* Removes the invisible gap below inline videos */
     }
 
     /* ===== SOLUTION CARDS GRID ===== */
@@ -206,7 +205,38 @@
             Your browser does not support the video tag.
           </video>
         </div>
+      </div> 
+
+      <div class="grid-3" style="margin-top: 24px;">
+        <div class="sol-card anim">
+          <div class="sol-card-top">🧪</div>
+          <div class="sol-card-body">
+            <span class="tag">Module 1</span>
+            <h3>Inventory & Consumables</h3>
+            <p>Maintain strict oversight over sensitive materials, precursor chemicals, and specialized substrates to ensure your lab never faces stock-out bottlenecks during critical synthesis runs.</p>
+          </div>
+        </div>
+        <div class="sol-card anim delay-1">
+          <div class="sol-card-top">⚙️</div>
+          <div class="sol-card-body">
+            <span class="tag">Module 2</span>
+            <h3>Equipment Lifecycle</h3>
+            <p>From gloveboxes to spectrophotometers, log usage hours, schedule mandatory calibration cycles, and track maintenance histories to extend hardware lifespans.</p>
+          </div>
+        </div>
+        <div class="sol-card anim delay-2">
+          <div class="sol-card-top">📊</div>
+          <div class="sol-card-body">
+            <span class="tag">Module 3</span>
+            <h3>Process Logging</h3>
+            <p>Digitize the bench notebook. Track experimental parameters, link data outputs (like PL or UV-Vis results) directly to specific fabrication batches, and ensure total traceability.</p>
+          </div>
+        </div>
+      </div>
       
+    </div>
+  </section>
+
   <section class="section-sm">
     <div class="container">
       <div class="cta-banner anim">
@@ -240,11 +270,9 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
+          <h4>Offerings</h4>
           <ul>
-            <li><a href="services.html">Consultancy</a></li>
-            <li><a href="solutions.html">LaB Management</a></li>
-            <li><a href="contact.html">End to End Projects</a></li>
+            <li><a href="contact.html">Consulting</a></li>
           </ul>
         </div>
         <div class="footer-col">
