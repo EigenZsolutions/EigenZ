@@ -67,21 +67,23 @@
       flex-shrink: 0;
     }
     
-   /* ===== VIDEO CONTAINER ===== */
+  /* ===== VIDEO CONTAINER (BULLETPROOF RESET) ===== */
     .video-container {
-      position: relative;
-      z-index: 1;
       width: 100%;
-      background: #000; /* Keeps a clean black background if the video takes a second to load */
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border-radius: var(--radius-lg);
       border: 1px solid rgba(255,255,255,0.1);
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      background: #000;
     }
     .video-container video {
-      width: 100%;
-      height: auto; /* This tells the browser to scale the height naturally */
-      display: block; /* This removes the tiny invisible gap browsers put under inline videos */
+      max-width: 100%;
+      height: auto;
+      object-fit: contain; /* Forces the entire video to fit inside without cropping */
+      display: block;
     }
 
     /* ===== SOLUTION CARDS GRID ===== */
@@ -236,9 +238,11 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Offerings</h4>
+          <h4>Services</h4>
           <ul>
-            <li><a href="contact.html">Consulting</a></li>
+            <li><a href="contact.html">Consultancy</a></li>
+            <li><a href="contact.html">LaB Management</a></li>
+            <li><a href="contact.html">End To End Projects</a></li>
           </ul>
         </div>
         <div class="footer-col">
