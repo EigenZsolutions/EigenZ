@@ -571,11 +571,9 @@ ul { list-style: none; }
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  opacity: 0.35; /* Dims the image so your white text and chips still pop perfectly */
-  transition: opacity var(--transition);
+  opacity: 0.35;
 }
-
-/* Optional: Make the image light up slightly when the card is hovered */
-.service-block:hover .service-img-bg {
-  opacity: 0.55;
+.vis-inner, .vis-chips {
+  position: relative;
+  z-index: 1; /* Forces the text to render on top of the background image */
 }
