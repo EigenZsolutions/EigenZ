@@ -162,12 +162,20 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
-      gap: 50px;
-      margin-top: 30px;
+      align-items: flex-start; /* Aligns items to top so names align nicely */
+      gap: 60px; 
+      margin-top: 40px;
     }
-    .client-logo {
+    .client-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
       width: 250px;
+      cursor: pointer;
+    }
+    .client-logo-wrapper {
+      width: 100%;
       height: 120px;
       display: flex;
       align-items: center;
@@ -176,15 +184,29 @@
       opacity: 0.5;
       transition: all 0.3s ease;
     }
-    .client-logo:hover {
+    .client-item:hover .client-logo-wrapper {
       filter: grayscale(0%);
       opacity: 1;
-      transform: translateY(-2px);
+      transform: translateY(-4px);
     }
-    .client-logo img {
+    .client-logo-wrapper img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
+    }
+    .client-name {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--clr-dark);
+      text-align: center;
+      line-height: 1.4;
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+    .client-item:hover .client-name {
+      opacity: 1;
+      color: var(--clr-accent);
     }
 
     /* ===== TESTIMONIALS ===== */
@@ -257,8 +279,10 @@
       .mission-section { grid-template-columns: 1fr; gap: 40px; }
       .tl-item { grid-template-columns: 64px 1px 1fr; }
       .tl-year { font-size: 1rem; }
-      .client-grid { gap: 30px; }
-      .client-logo { width: 140px; }
+      .client-grid { gap: 40px; }
+      .client-item { width: 160px; } 
+      .client-logo-wrapper { height: 90px; } 
+      .client-name { font-size: 0.85rem; }
     }
   </style>
 </head>
@@ -317,7 +341,7 @@
           <div style="margin-top: 32px;" class="anim delay-4">
             <a href="contact.html" class="btn btn-primary">Work With Us →</a>
           </div>
-</div>
+        </div>
         <div class="mission-visual anim delay-2">
           <div class="viz-box" style="position: relative; overflow: hidden; border-radius: var(--radius-lg); width: 100%; aspect-ratio: 1/1;">
             
@@ -328,6 +352,7 @@
           <div class="viz-float tl">🔬 Lab-Centric</div>
           <div class="viz-float br">📊 Enterprise-Grade</div>
         </div>
+      </div>
     </div>
   </section>
 
@@ -396,72 +421,6 @@
     </div>
   </section>
 
-  <!-- OUR CLIENTS & PARTNERS -->
-  <section class="section">
-    <div class="container">
-      <div style="text-align: center; max-width: 600px; margin: 0 auto 20px;">
-        <div class="label" style="justify-content: center;">Trusted By</div>
-        <h2 class="section-title anim">Institutional Partners</h2>
-      </div>
-      
-      <!-- LOGO GRID -->
-      <!-- Important: Ensure you save the respective logos in your root folder as 'iisc_logo.png', 'iitb_logo.png', etc. -->
-      <div class="client-grid anim delay-1">
-        <div class="client-logo" title="IISc Bangalore">
-          <img src="iisc_logo.jpg" alt="IISc Bangalore" />
-        </div>
-        <div class="client-logo" title="IIT Bombay">
-          <img src="iitb_logo.png" alt="IIT Bombay" />
-        </div>
-        <div class="client-logo" title="Jain University Bangalore">
-          <img src="jain_logo.png" alt="Jain University Bangalore" />
-        </div>
-        <div class="client-logo" title="Vel Tech Rangarajan Dr. Sagunthala R&D Institute">
-          <img src="veltech_logo.png" alt="Vel Tech Rangarajan Dr. Sagunthala R&D Institute" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS (Placeholder) 
-  <section class="section-sm" style="background: var(--clr-surface); padding-bottom: 80px;">
-    <div class="container">
-      <div style="text-align: center; max-width: 600px; margin: 0 auto 40px;">
-        <div class="label" style="justify-content: center;">Impact</div>
-        <h2 class="section-title anim">What Our Partners Say</h2>
-      </div>
-
-      <div class="grid-2">
-        <!-- Placeholder Card 1 
-        <div class="testimonial-card anim delay-1">
-          <p>"EigenZ Solutions completely overhauled our procurement pipeline. We reduced our administrative footprint by over 80%, allowing our researchers to focus purely on fabrication rather than L1 quotation tracking."</p>
-          <div class="test-author">
-            <div class="test-avatar">PI</div>
-            <div>
-              <h4>Partner Feedback Pending</h4>
-              <span>Principal Investigator, Top Institute</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Placeholder Card 2 
-        <div class="testimonial-card anim delay-2">
-          <p>"The level of domain fluency they brought to the table was unparalleled. They didn't just build a software layer; they engineered an operational backbone tailored exactly to our physical laboratory constraints."</p>
-          <div class="test-author">
-            <div class="test-avatar">LD</div>
-            <div>
-              <h4>Partner Feedback Pending</h4>
-              <span>Lab Director, Research Ecosystem</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-  -->
-  
-  
   <!-- TIMELINE -->
   <section class="section-sm" style="background: var(--clr-surface);">
     <div class="container">
@@ -508,7 +467,85 @@
     </div>
   </section>
 
-  
+  <!-- OUR CLIENTS & PARTNERS -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 20px;">
+        <div class="label" style="justify-content: center;">Trusted By</div>
+        <h2 class="section-title anim">Institutional Partners</h2>
+      </div>
+      
+      <!-- LOGO GRID WITH NAMES -->
+      <div class="client-grid anim delay-1">
+        
+        <div class="client-item" title="IISc Bangalore">
+          <div class="client-logo-wrapper">
+            <img src="iisc_logo.png" alt="IISc Bangalore Logo" />
+          </div>
+          <div class="client-name">IISc Bangalore</div>
+        </div>
+
+        <div class="client-item" title="IIT Bombay">
+          <div class="client-logo-wrapper">
+            <img src="iitb_logo.png" alt="IIT Bombay Logo" />
+          </div>
+          <div class="client-name">IIT Bombay</div>
+        </div>
+
+        <div class="client-item" title="Jain University Bangalore">
+          <div class="client-logo-wrapper">
+            <img src="jain_logo.png" alt="Jain University Bangalore Logo" />
+          </div>
+          <div class="client-name">Jain University<br>Bangalore</div>
+        </div>
+
+        <div class="client-item" title="Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology">
+          <div class="client-logo-wrapper">
+            <img src="veltech_logo.png" alt="Vel Tech R&D Institute Logo" />
+          </div>
+          <div class="client-name">Vel Tech R&D Institute<br>of Science & Technology</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (Placeholder) -->
+  <section class="section-sm" style="background: var(--clr-surface); padding-bottom: 80px;">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 40px;">
+        <div class="label" style="justify-content: center;">Impact</div>
+        <h2 class="section-title anim">What Our Partners Say</h2>
+      </div>
+
+      <div class="grid-2">
+        <!-- Placeholder Card 1 -->
+        <div class="testimonial-card anim delay-1">
+          <p>"EigenZ Solutions completely overhauled our procurement pipeline. We reduced our administrative footprint by over 80%, allowing our researchers to focus purely on fabrication rather than L1 quotation tracking."</p>
+          <div class="test-author">
+            <div class="test-avatar">PI</div>
+            <div>
+              <h4>Partner Feedback Pending</h4>
+              <span>Principal Investigator, Top Institute</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Placeholder Card 2 -->
+        <div class="testimonial-card anim delay-2">
+          <p>"The level of domain fluency they brought to the table was unparalleled. They didn't just build a software layer; they engineered an operational backbone tailored exactly to our physical laboratory constraints."</p>
+          <div class="test-author">
+            <div class="test-avatar">LD</div>
+            <div>
+              <h4>Partner Feedback Pending</h4>
+              <span>Lab Director, Research Ecosystem</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- CTA -->
   <section class="section-sm">
@@ -549,7 +586,7 @@
       </div>
       <div class="footer-bottom">
         <span>© 2026 EigenZ Solutions. All rights reserved.</span>
-        <div class="socials"><a href="https://www.linkedin.com/company/eigenz-solutions/home/?viewAsMember=true" title="LinkedIn">in</a><a href="#" title="GitHub">gh</a><a href="#" title="Twitter">tw</a></div>
+        <div class="socials"><a href="#" title="LinkedIn">in</a><a href="#" title="GitHub">gh</a><a href="#" title="Twitter">tw</a></div>
       </div>
     </div>
   </footer>
